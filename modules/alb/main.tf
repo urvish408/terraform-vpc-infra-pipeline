@@ -1,0 +1,12 @@
+resource "aws_lb" "test" {
+  name               = "application-load-balancer"
+  internal           = false
+  load_balancer_type = "application"
+  security_groups    = [var.sg_id]
+  subnets            = var.subnets
+
+  enable_deletion_protection = true
+}
+
+#listener
+
